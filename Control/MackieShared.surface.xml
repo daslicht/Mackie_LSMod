@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ControlSurface>
+	<!-- ******************************************************************************************** -->
+	<!-- CONTROL DEFINITIONS (Shared between MCU and Extender) -->
+	<!-- ******************************************************************************************** -->
+
+	<Controls>
+        <!-- ******************************************************************************************** -->
+        <!-- Faders -->
+        <!-- ******************************************************************************************** -->
+
+		<Control name="fader[0]" type="fader" title="Fader 1" options="pageable transmit receive public"> <MidiMessage status="#E0" channel="0"/> </Control>
+		<Control name="fader[1]" type="fader" title="Fader 2" options="pageable transmit receive public"> <MidiMessage status="#E0" channel="1"/> </Control>
+		<Control name="fader[2]" type="fader" title="Fader 3" options="pageable transmit receive public"> <MidiMessage status="#E0" channel="2"/> </Control>
+		<Control name="fader[3]" type="fader" title="Fader 4" options="pageable transmit receive public"> <MidiMessage status="#E0" channel="3"/> </Control>
+		<Control name="fader[4]" type="fader" title="Fader 5" options="pageable transmit receive public"> <MidiMessage status="#E0" channel="4"/> </Control>
+		<Control name="fader[5]" type="fader" title="Fader 6" options="pageable transmit receive public"> <MidiMessage status="#E0" channel="5"/> </Control>
+		<Control name="fader[6]" type="fader" title="Fader 7" options="pageable transmit receive public"> <MidiMessage status="#E0" channel="6"/> </Control>
+		<Control name="fader[7]" type="fader" title="Fader 8" options="pageable transmit receive public"> <MidiMessage status="#E0" channel="7"/> </Control>
+			
+		<Control name="faderTouch[0]" type="trigger" options="receive"> <MidiMessage status="#90" address="#68"/> </Control>
+		<Control name="faderTouch[1]" type="trigger" options="receive"> <MidiMessage status="#90" address="#69"/> </Control>
+		<Control name="faderTouch[2]" type="trigger" options="receive"> <MidiMessage status="#90" address="#6A"/> </Control>
+		<Control name="faderTouch[3]" type="trigger" options="receive"> <MidiMessage status="#90" address="#6B"/> </Control>
+		<Control name="faderTouch[4]" type="trigger" options="receive"> <MidiMessage status="#90" address="#6C"/> </Control>
+		<Control name="faderTouch[5]" type="trigger" options="receive"> <MidiMessage status="#90" address="#6D"/> </Control>
+		<Control name="faderTouch[6]" type="trigger" options="receive"> <MidiMessage status="#90" address="#6E"/> </Control>
+		<Control name="faderTouch[7]" type="trigger" options="receive"> <MidiMessage status="#90" address="#6F"/> </Control>
+        
+        <!-- ******************************************************************************************** -->
+        <!-- VU Meter -->
+        <!-- ******************************************************************************************** -->
+        
+		<Control name="meter[0][0]" options="transmit fastupdate"/>
+		<Control name="meter[0][1]" options="transmit fastupdate"/>
+		<Control name="meter[1][0]" options="transmit fastupdate"/>
+		<Control name="meter[1][1]" options="transmit fastupdate"/>
+		<Control name="meter[2][0]" options="transmit fastupdate"/>
+		<Control name="meter[2][1]" options="transmit fastupdate"/>
+		<Control name="meter[3][0]" options="transmit fastupdate"/>
+		<Control name="meter[3][1]" options="transmit fastupdate"/>
+		<Control name="meter[4][0]" options="transmit fastupdate"/>
+		<Control name="meter[4][1]" options="transmit fastupdate"/>
+		<Control name="meter[5][0]" options="transmit fastupdate"/>
+		<Control name="meter[5][1]" options="transmit fastupdate"/>
+		<Control name="meter[6][0]" options="transmit fastupdate"/>
+		<Control name="meter[6][1]" options="transmit fastupdate"/>
+		<Control name="meter[7][0]" options="transmit fastupdate"/>
+		<Control name="meter[7][1]" options="transmit fastupdate"/>
+
+ 		<!-- stereo controls (not on device) -->
+		<Control name="stereo[0]" options="transmit"/>
+		<Control name="stereo[1]" options="transmit"/>
+		<Control name="stereo[2]" options="transmit"/>
+		<Control name="stereo[3]" options="transmit"/>
+		<Control name="stereo[4]" options="transmit"/>
+		<Control name="stereo[5]" options="transmit"/>
+		<Control name="stereo[6]" options="transmit"/>
+		<Control name="stereo[7]" options="transmit"/>
+
+		<!-- ******************************************************************************************** -->
+        <!-- Buttons + LEDs -->
+        <!-- ******************************************************************************************** -->
+
+		<!-- Record Ready -->
+		<Control name="recordButton[0]" type="trigger" options="receive"> <MidiMessage status="#90" address="#00"/> </Control>
+		<Control name="recordButton[1]" type="trigger" options="receive"> <MidiMessage status="#90" address="#01"/> </Control>
+		<Control name="recordButton[2]" type="trigger" options="receive"> <MidiMessage status="#90" address="#02"/> </Control>
+		<Control name="recordButton[3]" type="trigger" options="receive"> <MidiMessage status="#90" address="#03"/> </Control>
+		<Control name="recordButton[4]" type="trigger" options="receive"> <MidiMessage status="#90" address="#04"/> </Control>
+		<Control name="recordButton[5]" type="trigger" options="receive"> <MidiMessage status="#90" address="#05"/> </Control>
+		<Control name="recordButton[6]" type="trigger" options="receive"> <MidiMessage status="#90" address="#06"/> </Control>
+		<Control name="recordButton[7]" type="trigger" options="receive"> <MidiMessage status="#90" address="#07"/> </Control>
+
+		<Control name="recordLED[0]" options="transmit"> <MidiMessage status="#90" address="#00"/> </Control>
+		<Control name="recordLED[1]" options="transmit"> <MidiMessage status="#90" address="#01"/> </Control>
+		<Control name="recordLED[2]" options="transmit"> <MidiMessage status="#90" address="#02"/> </Control>
+		<Control name="recordLED[3]" options="transmit"> <MidiMessage status="#90" address="#03"/> </Control>
+		<Control name="recordLED[4]" options="transmit"> <MidiMessage status="#90" address="#04"/> </Control>
+		<Control name="recordLED[5]" options="transmit"> <MidiMessage status="#90" address="#05"/> </Control>
+		<Control name="recordLED[6]" options="transmit"> <MidiMessage status="#90" address="#06"/> </Control>
+		<Control name="recordLED[7]" options="transmit"> <MidiMessage status="#90" address="#07"/> </Control>
+
+		<!-- Solo -->
+		<Control name="soloButton[0]" type="trigger" options="receive"> <MidiMessage status="#90" address="#08"/> </Control>
+		<Control name="soloButton[1]" type="trigger" options="receive"> <MidiMessage status="#90" address="#09"/> </Control>
+		<Control name="soloButton[2]" type="trigger" options="receive"> <MidiMessage status="#90" address="#0A"/> </Control>
+		<Control name="soloButton[3]" type="trigger" options="receive"> <MidiMessage status="#90" address="#0B"/> </Control>
+		<Control name="soloButton[4]" type="trigger" options="receive"> <MidiMessage status="#90" address="#0C"/> </Control>
+		<Control name="soloButton[5]" type="trigger" options="receive"> <MidiMessage status="#90" address="#0D"/> </Control>
+		<Control name="soloButton[6]" type="trigger" options="receive"> <MidiMessage status="#90" address="#0E"/> </Control>
+		<Control name="soloButton[7]" type="trigger" options="receive"> <MidiMessage status="#90" address="#0F"/> </Control>
+
+		<Control name="soloLED[0]" options="transmit"> <MidiMessage status="#90" address="#08"/> </Control>
+		<Control name="soloLED[1]" options="transmit"> <MidiMessage status="#90" address="#09"/> </Control>
+		<Control name="soloLED[2]" options="transmit"> <MidiMessage status="#90" address="#0A"/> </Control>
+		<Control name="soloLED[3]" options="transmit"> <MidiMessage status="#90" address="#0B"/> </Control>
+		<Control name="soloLED[4]" options="transmit"> <MidiMessage status="#90" address="#0C"/> </Control>
+		<Control name="soloLED[5]" options="transmit"> <MidiMessage status="#90" address="#0D"/> </Control>
+		<Control name="soloLED[6]" options="transmit"> <MidiMessage status="#90" address="#0E"/> </Control>
+		<Control name="soloLED[7]" options="transmit"> <MidiMessage status="#90" address="#0F"/> </Control>
+		
+		<!-- Mute -->
+		<Control name="muteButton[0]" type="trigger" options="receive"> <MidiMessage status="#90" address="#10"/> </Control>
+		<Control name="muteButton[1]" type="trigger" options="receive"> <MidiMessage status="#90" address="#11"/> </Control>
+		<Control name="muteButton[2]" type="trigger" options="receive"> <MidiMessage status="#90" address="#12"/> </Control>
+		<Control name="muteButton[3]" type="trigger" options="receive"> <MidiMessage status="#90" address="#13"/> </Control>
+		<Control name="muteButton[4]" type="trigger" options="receive"> <MidiMessage status="#90" address="#14"/> </Control>
+		<Control name="muteButton[5]" type="trigger" options="receive"> <MidiMessage status="#90" address="#15"/> </Control>
+		<Control name="muteButton[6]" type="trigger" options="receive"> <MidiMessage status="#90" address="#16"/> </Control>
+		<Control name="muteButton[7]" type="trigger" options="receive"> <MidiMessage status="#90" address="#17"/> </Control>
+
+		<Control name="muteLED[0]" options="transmit"> <MidiMessage status="#90" address="#10"/> </Control>
+		<Control name="muteLED[1]" options="transmit"> <MidiMessage status="#90" address="#11"/> </Control>
+		<Control name="muteLED[2]" options="transmit"> <MidiMessage status="#90" address="#12"/> </Control>
+		<Control name="muteLED[3]" options="transmit"> <MidiMessage status="#90" address="#13"/> </Control>
+		<Control name="muteLED[4]" options="transmit"> <MidiMessage status="#90" address="#14"/> </Control>
+		<Control name="muteLED[5]" options="transmit"> <MidiMessage status="#90" address="#15"/> </Control>
+		<Control name="muteLED[6]" options="transmit"> <MidiMessage status="#90" address="#16"/> </Control>
+		<Control name="muteLED[7]" options="transmit"> <MidiMessage status="#90" address="#17"/> </Control>
+
+		<!-- Select -->
+		<Control name="selectButton[0]" type="trigger" options="receive"> <MidiMessage status="#90" address="#18"/> </Control>
+		<Control name="selectButton[1]" type="trigger" options="receive"> <MidiMessage status="#90" address="#19"/> </Control>
+		<Control name="selectButton[2]" type="trigger" options="receive"> <MidiMessage status="#90" address="#1A"/> </Control>
+		<Control name="selectButton[3]" type="trigger" options="receive"> <MidiMessage status="#90" address="#1B"/> </Control>
+		<Control name="selectButton[4]" type="trigger" options="receive"> <MidiMessage status="#90" address="#1C"/> </Control>
+		<Control name="selectButton[5]" type="trigger" options="receive"> <MidiMessage status="#90" address="#1D"/> </Control>
+		<Control name="selectButton[6]" type="trigger" options="receive"> <MidiMessage status="#90" address="#1E"/> </Control>
+		<Control name="selectButton[7]" type="trigger" options="receive"> <MidiMessage status="#90" address="#1F"/> </Control>
+
+		<Control name="selectLED[0]" options="transmit"> <MidiMessage status="#90" address="#18"/> </Control>
+		<Control name="selectLED[1]" options="transmit"> <MidiMessage status="#90" address="#19"/> </Control>
+		<Control name="selectLED[2]" options="transmit"> <MidiMessage status="#90" address="#1A"/> </Control>
+		<Control name="selectLED[3]" options="transmit"> <MidiMessage status="#90" address="#1B"/> </Control>
+		<Control name="selectLED[4]" options="transmit"> <MidiMessage status="#90" address="#1C"/> </Control>
+		<Control name="selectLED[5]" options="transmit"> <MidiMessage status="#90" address="#1D"/> </Control>
+		<Control name="selectLED[6]" options="transmit"> <MidiMessage status="#90" address="#1E"/> </Control>
+		<Control name="selectLED[7]" options="transmit"> <MidiMessage status="#90" address="#1F"/> </Control>
+		
+        <!-- ******************************************************************************************** -->
+        <!-- Displays -->
+        <!-- ******************************************************************************************** -->
+
+		<Control name="textCell[0][0]" type="textdisplay" options="transmit public"/>
+		<Control name="textCell[0][1]" type="textdisplay" options="transmit public"/>
+		<Control name="textCell[0][2]" type="textdisplay" options="transmit public"/>
+		<Control name="textCell[0][3]" type="textdisplay" options="transmit public"/>
+		<Control name="textCell[0][4]" type="textdisplay" options="transmit public"/>
+		<Control name="textCell[0][5]" type="textdisplay" options="transmit public"/>
+		<Control name="textCell[0][6]" type="textdisplay" options="transmit public"/>
+		<Control name="textCell[0][7]" type="textdisplay" options="transmit public"/>
+		
+		<Control name="textCell[1][0]" type="textdisplay" options="transmit public"/>
+		<Control name="textCell[1][1]" type="textdisplay" options="transmit public"/>
+		<Control name="textCell[1][2]" type="textdisplay" options="transmit public"/>
+		<Control name="textCell[1][3]" type="textdisplay" options="transmit public"/>
+		<Control name="textCell[1][4]" type="textdisplay" options="transmit public"/>
+		<Control name="textCell[1][5]" type="textdisplay" options="transmit public"/>
+		<Control name="textCell[1][6]" type="textdisplay" options="transmit public"/>
+		<Control name="textCell[1][7]" type="textdisplay" options="transmit public"/>
+		
+        <!-- ******************************************************************************************** -->
+        <!-- V-Pots -->
+        <!-- ******************************************************************************************** -->
+
+		<Control name="vpot[0]" title="V-Pot 1" type="relative" options="pageable receive public"/>
+		<Control name="vpot[1]" title="V-Pot 2" type="relative" options="pageable receive public"/>
+		<Control name="vpot[2]" title="V-Pot 3" type="relative" options="pageable receive public"/>
+		<Control name="vpot[3]" title="V-Pot 4" type="relative" options="pageable receive public"/>
+		<Control name="vpot[4]" title="V-Pot 5" type="relative" options="pageable receive public"/>
+		<Control name="vpot[5]" title="V-Pot 6" type="relative" options="pageable receive public"/>
+		<Control name="vpot[6]" title="V-Pot 7" type="relative" options="pageable receive public"/>
+		<Control name="vpot[7]" title="V-Pot 8" type="relative" options="pageable receive public"/>
+
+		<Control name="ledRing[0]" options="transmit"/>
+		<Control name="ledRing[1]" options="transmit"/>
+		<Control name="ledRing[2]" options="transmit"/>
+		<Control name="ledRing[3]" options="transmit"/>
+		<Control name="ledRing[4]" options="transmit"/>
+		<Control name="ledRing[5]" options="transmit"/>
+		<Control name="ledRing[6]" options="transmit"/>
+		<Control name="ledRing[7]" options="transmit"/>
+
+		<!-- V-Select -->
+		<Control name="vsel[0]" title="V-Select 1" type="trigger" options="pageable receive public"> <MidiMessage status="#90" address="#20"/> </Control>
+		<Control name="vsel[1]" title="V-Select 2" type="trigger" options="pageable receive public"> <MidiMessage status="#90" address="#21"/> </Control>
+		<Control name="vsel[2]" title="V-Select 3" type="trigger" options="pageable receive public"> <MidiMessage status="#90" address="#22"/> </Control>
+		<Control name="vsel[3]" title="V-Select 4" type="trigger" options="pageable receive public"> <MidiMessage status="#90" address="#23"/> </Control>
+		<Control name="vsel[4]" title="V-Select 5" type="trigger" options="pageable receive public"> <MidiMessage status="#90" address="#24"/> </Control>
+		<Control name="vsel[5]" title="V-Select 6" type="trigger" options="pageable receive public"> <MidiMessage status="#90" address="#25"/> </Control>
+		<Control name="vsel[6]" title="V-Select 7" type="trigger" options="pageable receive public"> <MidiMessage status="#90" address="#26"/> </Control>
+		<Control name="vsel[7]" title="V-Select 8" type="trigger" options="pageable receive public"> <MidiMessage status="#90" address="#27"/> </Control>		
+		
+	</Controls>
+	
+	<!-- ******************************************************************************************** -->
+	<!-- TEMPLATE DEFINITIONS -->
+	<!-- ******************************************************************************************** -->
+
+	<Templates>
+
+        <!-- ******************************************************************************************** -->
+		<!-- Plug-in Controls -->
+        <!-- ******************************************************************************************** -->
+
+		<Template name="PlugControlMapping">
+			<foreach variable="$ch" count="8">
+				<Strip name="vpot[$ch]" onConnect="onConnectPlugControl($ch)"/>
+				<Strip name="vsel[$ch]" onConnect="onConnectPlugControl($ch)"/>
+				<Strip name="fader[$ch]" onConnect="onConnectPlugControl($ch)"/>
+			</foreach>				
+		</Template>
+	
+        <!-- ******************************************************************************************** -->
+		<!-- Channel strips connected to alias parameters -->
+        <!-- ******************************************************************************************** -->
+
+		<Template name="ChannelStripAliasMapping">
+			<foreach variable="$ch" count="8">
+				<String control="textCell[0][$ch]" param="labelString$ch"/>
+				<String control="textCell[1][$ch]" param="valueString$ch"/>
+				<Value control="fader[$ch]" param="faderValue$ch"/>
+				<Touch control="faderTouch[$ch]" param="faderValue$ch"/>				
+				<Relative control="vpot[$ch]" param="potValue$ch"/>				
+				<Value control="ledRing[$ch]" param="potValue$ch"/>
+				<Toggle control="vsel[$ch]" param="potSelectValue$ch"/>			
+<!--				<DefaultValue control="vsel[$ch]" param="potValue$ch"/>		-->	
+			</foreach>
+		</Template>
+
+        <!-- ******************************************************************************************** -->
+		<!-- 8 Channel Strips -->
+        <!-- ******************************************************************************************** -->
+
+		<Template name="AllChannelStrips">
+			<foreach variable="$ch" count="8">			
+				<Strip onConnect="onConnectChannel($ch)">				
+					<!-- Inserts + Sends (used for script interaction) -->
+					<!--
+					<Bank target="Inserts" name="InsertsBankElement">
+						<foreach variable="$insertIndex" count="8">
+							<Strip onConnect="onConnectChannelInsert($ch,$insertIndex)"/>
+						</foreach>
+					</Bank>
+					-->
+					<Bank target="Sends" name="SendsBankElement">
+						<foreach variable="$sendIndex" count="8">
+							<Strip onConnect="onConnectChannelSend($ch,$sendIndex)"/>
+						</foreach>
+					</Bank>
+					
+					<!-- Note: faders + vpots are connected to alias parameters -->
+					
+					<Toggle control="recordButton[$ch]" param="recordArmed"/>
+					<Value control="recordLED[$ch]" param="recordArmed"/>
+
+					<Toggle control="soloButton[$ch]" param="solo" options="momentary"/>
+					<Value control="soloLED[$ch]" param="solo"/>
+
+					<Toggle control="muteButton[$ch]" param="mute" options="momentary"/>
+					<Value control="muteLED[$ch]" param="mute"/>
+
+					<Toggle control="selectButton[$ch]" param="selected"/>
+					<Value control="selectLED[$ch]" param="selected"/>
+					
+					<Value control="stereo[$ch]"    param="stereo"/>
+					<Value control="meter[$ch][0]"  param="level1"/>
+					<Value control="meter[$ch][1]"  param="level2"/>
+				</Strip>
+			</foreach>
+		</Template>
+		
+        <!-- ******************************************************************************************** -->
+		<!-- Selected Channel Inserts + Sends -->
+        <!-- ******************************************************************************************** -->
+
+		<Template name="FocusChannelInsertsAndSends">
+			<!-- Inserts + Sends (used for script interaction) -->
+			<Bank target="Inserts" name="InsertsBankElement">
+				<foreach variable="$insertIndex" count="8">
+					<Strip onConnect="onConnectFocusChannelInsert($insertIndex)"/>
+				</foreach>
+			</Bank>
+			<Bank target="Sends" name="SendsBankElement">
+				<foreach variable="$sendIndex" count="8">
+					<Strip onConnect="onConnectFocusChannelSend($sendIndex)"/>
+				</foreach>
+			</Bank>
+		</Template>
+		
+	</Templates>
+
+</ControlSurface>

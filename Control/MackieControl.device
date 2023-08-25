@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DeviceDefinition
+	vendor="Mackie LSMod"
+	name="Control"
+	family="MackieFamily"
+	
+	classID="{EE428900-E2B0-123a-B27C-2730D0F373B7}"
+	category="Surface"
+	
+	nativeCode="MackieControl"
+	surfaceFile="MackieControl.surface.xml"
+	surfacePlacementSize="8"
+	
+	scriptFile="MackieControl.js"
+	scriptFile.functionName="createInstance"
+	
+	imageFile="MackieControl.png"
+	textFile="MackieControl.txt"
+
+	skinFile="skin/"
+	formName="MackieControl"
+
+	hostDataFile="Mackie LSMod Control.surfacedata"	
+
+	/>

@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Skin>	
+    <Resources>
+        <Image name="MackieBG" 	   url="macki_bg.png"/>        
+        <Image name="MackieXTBG"   url="mackie_xt_bg.png"/>        
+		<Image name="MackieButton" url="MackieButton.png" frames="normal pressed"/>
+		<Image name="BigButton"	   url="BigButton.png"	tile="tile-xy"	margin="4,10,3,10"	frames="normal mouseover pressed normalOn mouseoverOn pressedOn disabled"/>
+
+		<ImagePart image="MackieBG" size="649,22,20,180" name="MackieSliderBack" />
+		<Image name="MSliderHandle"	url="MSliderhandle.png" frames="normal pressed"/>
+	</Resources>
+	
+	<Styles>
+	    <Style name="MSlider">
+			<Image name="vHandle" 	image="MSliderHandle" />
+			<Image name="vBack" 	image="MackieSliderBack" />
+		</Style>
+		
+		<Style name="MDisplayText">
+            <Font name="textfont" themeid="PresonusUI" size="11" style="bold"/>
+            <Align name="textalign" align="hcenter"/>
+			<Color name="textcolor" color="#5c9dcc"/>
+        </Style>		
+		
+		<Style name="MDisplayTextSmall" inherit="MDisplayText">
+            <Font name="textfont" themeid="PresonusUI" size="10"/>
+        </Style>
+
+		<Style name="MPageableText">
+            <Font name="textfont" themeid="PresonusUI" size="11"/>
+			<Color name="textcolor" color="#86b7db"/>
+        </Style>	
+
+		<Style name="MPageableText_left" inherit="MPageableText">
+            <Align name="textalign" align="hleft"/>
+        </Style>	
+
+		<Style name="MPageableText_right" inherit="MPageableText">
+            <Align name="textalign" align="hright"/>
+        </Style>	
+
+		<Style name="Text">
+			<Font  name="textfont"   themeid="PresonusUI" size="10"/>
+			<Color name="textcolor"  color="black" />
+		</Style>
+
+		<Style name="RadioGroup">
+			<Font name="textfont" 	themeid="PresonusUI" size="10"/>
+			<Color name="textcolor" color="black" />
+			<Image name="background"  image="BigButton"/>
+			<Metric name="buttonstyle" value="1"/>
+		</Style>
+		
+		<Style name="AssignModeGroupBGColor">
+			<Color name="backcolor"	color="hsl(0,0,20)"/>
+		</Style>
+
+	</Styles>
+	
+	<Forms>
+        <!-- ******************************************************************************************** -->
+	    <!-- MACKIE CONTROL EDITOR -->
+	    <!-- ******************************************************************************************** -->
+
+		<Form name="ChannelStripContainer">
+			<Horizontal margin="0" spacing="4" >
+				<!-- CHANNEL STRIPS -->
+				<foreach variable="$index" count="8">
+					<View size="0,0,70,80">
+						<Vertical margin="0" spacing="6" size="0,2,70,80">
+							<using controller="textCell[0][$index]">
+								<TextBox name="controlValue" width="70" height="16" options="transparent fittext composited nocontextmenu" style="MDisplayText"/>
+							</using>
+							<using controller="textCell[1][$index]">
+								<TextBox name="controlValue" width="70" height="16" options="transparent fittext composited nocontextmenu" style="MDisplayTextSmall"/>
+							</using>
+							<using controller="vsel[$index]">
+								<TextBox name="paramTitle" width ="70" height="16" options="transparent fittext nocontextmenu" style="MDisplayText"/>
+							</using>
+							
+							<using controller="fader[$index]">
+								<TextBox name="paramTitle" width ="70" height="16" options="transparent fittext nocontextmenu" style="MDisplayText"/>
+							</using>
+						</Vertical>
+						<!-- Transparent references (Allows 'unassign' right click)-->
+						<using controller="vpot[$index]">
+							<Toggle name="controlValue" size="0,0,70,35" options="transparent"/>
+						</using>
+
+					</View>
+				</foreach>
+			</Horizontal>
+		</Form>
+
+		<Form name="MackieControl" width="760" height="220" image="MackieBG" datatarget="ControlSurface/Editor/ControlList">
+
+			<using controller="ControlSurface/Editor">
+				<!-- FOCUS DEVICE -->
+				<TextBox name="focusDeviceName" 	size="87,18,136,20"  options="transparent fittext" style="MDisplayText"/>
+				<TextBox name="focusDeviceFolder" 	size="236,18,171,20" options="transparent fittext" style="MDisplayText"/>
+
+				<using controller="Paging">
+					<TextBox	name="pagingStatus" 	size="87,33,136,20" 		style="MPageableText" options="transparent"/>
+				</using>
+
+				<!-- ASSIGNMENT -->
+				<using controller="Device">
+					<ImageView style="AssignModeGroupBGColor" options="colorize" size="431,30">
+						<Horizontal margin="0" spacing="0">
+							<RadioButton name="assignMode" value="0" title="Track"	 size="0,0,61,18" style="RadioGroup"/>
+							<RadioButton name="assignMode" value="1" title="Sends"	 size="0,0,61,18" style="RadioGroup"/>
+							<RadioButton name="assignMode" value="2" title="Pan"	 size="0,0,61,18" style="RadioGroup"/>
+							<RadioButton name="assignMode" value="3" title="Plug-in" size="0,0,61,18" style="RadioGroup"/>
+							<RadioButton name="assignMode" value="4" title="FX"		 size="0,0,61,18" style="RadioGroup"/>
+							<Space width="1"/>
+						</Horizontal>
+					</ImageView>
+				</using>
+
+				<!-- CHANNEL STRIPS -->
+				<View size="32,67,590,80">
+					<View name="ChannelStripContainer"/>
+				</View>
+				
+				<!-- MASTER FADER -->
+				<View size="630,67,100,80">
+					<Vertical margin="0" spacing="6" size="0,2">
+						<using controller="masterFader">
+							<TextBox name="paramTitle"  width="100" height="16" options="transparent fittext composited nocontextmenu" style="MDisplayText"/>
+						</using>
+						<using controller="masterDisplay">
+							<TextBox name="controlValue"  width="100" height="16" options="transparent fittext composited nocontextmenu" style="MDisplayTextSmall"/>
+						</using>
+					</Vertical>
+					<using controller="masterFader">
+						<Toggle name="controlValue" size="0,0,100,16" options="transparent"/>
+					</using>
+				</View>
+				
+				<!-- F Buttons -->
+				<Horizontal size="80,167,550,15" spacing="59" margin="0">
+					<using controller="F1">
+						<Button  name="controlValue"	image="MackieButton"	width="15"	height="15"/>
+					</using>						
+					<using controller="F2">
+						<Button  name="controlValue"	image="MackieButton"	width="15"	height="15"/>
+					</using>						
+					<using controller="F3">
+						<Button  name="controlValue"	image="MackieButton"	width="15"	height="15"/>
+					</using>						
+					<using controller="F4">
+						<Button  name="controlValue"	image="MackieButton"	width="15"	height="15"/>
+					</using>						
+					<using controller="F5">
+						<Button  name="controlValue"	image="MackieButton"	width="15"	height="15"/>
+					</using>						
+					<using controller="F6">
+						<Button  name="controlValue"	image="MackieButton"	width="15"	height="15"/>
+					</using>						
+					<using controller="F7">
+						<Button  name="controlValue"	image="MackieButton"	width="15"	height="15"/>
+					</using>						
+					<using controller="F8">
+						<Button  name="controlValue"	image="MackieButton"	width="15"	height="15"/>
+					</using>
+				</Horizontal>				
+				
+				<Horizontal size="31,183,590,18" spacing="2" margin="0">
+					<using controller="F1">
+						<TextBox  name="paramTitle"	style="Text"	options="transparent fittext"	width="72"	height="18"/>
+					</using>						
+					<using controller="F2">
+						<TextBox  name="paramTitle"	style="Text"	options="transparent fittext"	width="72"	height="18"/>
+					</using>						
+					<using controller="F3">
+						<TextBox  name="paramTitle"	style="Text"	options="transparent fittext"	width="72"	height="18"/>
+					</using>						
+					<using controller="F4">
+						<TextBox  name="paramTitle"	style="Text"	options="transparent fittext"	width="72"	height="18"/>
+					</using>						
+					<using controller="F5">
+						<TextBox  name="paramTitle"	style="Text"	options="transparent fittext"	width="72"	height="18"/>
+					</using>						
+					<using controller="F6">
+						<TextBox  name="paramTitle"	style="Text"	options="transparent fittext"	width="72"	height="18"/>
+					</using>						
+					<using controller="F7">
+						<TextBox  name="paramTitle"	style="Text"	options="transparent fittext"	width="72"	height="18"/>
+					</using>						
+					<using controller="F8">
+						<TextBox  name="paramTitle"	style="Text"	options="transparent fittext"	width="72"	height="18"/>
+					</using>
+
+				</Horizontal>
+			</using>
+
+		</Form>
+		
+        <!-- ******************************************************************************************** -->
+	    <!-- MACKIE EXTENDER EDITOR -->
+	    <!-- ******************************************************************************************** -->
+
+		<Form name="MackieControlXT" width="650" height="100" image="MackieXTBG" datatarget="ControlSurface/Editor/ControlList">
+			<using controller="ControlSurface/Editor">
+				<!-- CHANNEL STRIPS -->
+				<View size="32,26,590,50">
+					<View name="ChannelStripContainer"/>
+				</View>
+			</using>
+		</Form>
+		
+	</Forms>
+</Skin>

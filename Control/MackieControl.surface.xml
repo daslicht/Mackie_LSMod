@@ -1,0 +1,503 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ControlSurface>
+	<Files>
+		<File url="MackieShared.surface.xml"/>
+	</Files>
+
+	<!-- ******************************************************************************************** -->
+	<!-- CONTROL DEFINITIONS -->
+	<!-- ******************************************************************************************** -->
+
+	<Controls>
+        <!-- ******************************************************************************************** -->
+        <!-- Master Fader -->
+        <!-- ******************************************************************************************** -->
+		
+		<Control name="masterFader" title="Master Fader"  type="fader" options="transmit receive public">
+			<MidiMessage status="#E0" channel="8"/> 
+		</Control>
+		
+		<Control name="masterTouch" type="trigger" options="receive"> <MidiMessage status="#90" address="#70"/> </Control>
+		
+		<!-- Virtual master display for editor -->
+		<Control name="masterDisplay" type="textdisplay" options="transmit public"/>
+        
+		<!-- ******************************************************************************************** -->
+        <!-- Buttons + LEDs -->
+        <!-- ******************************************************************************************** -->
+
+		<!-- Assignment Buttons -->
+		<Control name="trackButton"      type="trigger" options="receive"> <MidiMessage status="#90" address="#28"/> </Control>
+		<Control name="sendButton"       type="trigger" options="receive"> <MidiMessage status="#90" address="#29"/> </Control>
+		<Control name="panButton"        type="trigger" options="receive"> <MidiMessage status="#90" address="#2A"/> </Control>
+		<Control name="pluginButton"     type="trigger" options="receive"> <MidiMessage status="#90" address="#2B"/> </Control>
+		<Control name="eqButton"         type="trigger" options="receive"> <MidiMessage status="#90" address="#2C"/> </Control>
+		<Control name="instrumentButton" type="trigger" options="receive"> <MidiMessage status="#90" address="#2D"/> </Control>
+
+		<Control name="trackLED"      options="transmit"> <MidiMessage status="#90" address="#28"/> </Control>
+		<Control name="sendLED"       options="transmit"> <MidiMessage status="#90" address="#29"/> </Control>
+		<Control name="panLED"        options="transmit"> <MidiMessage status="#90" address="#2A"/> </Control>
+		<Control name="pluginLED"     options="transmit"> <MidiMessage status="#90" address="#2B"/> </Control>
+		<Control name="eqLED"         options="transmit"> <MidiMessage status="#90" address="#2C"/> </Control>
+		<Control name="instrumentLED" options="transmit"> <MidiMessage status="#90" address="#2D"/> </Control>
+		
+		<!-- Fader Banks -->
+		<Control name="faderBankLeft"  type="trigger" options="receive"> <MidiMessage status="#90" address="#2E"/> </Control>
+		<Control name="faderBankRight" type="trigger" options="receive"> <MidiMessage status="#90" address="#2F"/> </Control>
+		<Control name="faderChanLeft"  type="trigger" options="receive"> <MidiMessage status="#90" address="#30"/> </Control>
+		<Control name="faderChanRight" type="trigger" options="receive"> <MidiMessage status="#90" address="#31"/> </Control>
+
+		<!-- Flip / Global View-->
+		<Control name="flipButton"       type="trigger" options="receive"> <MidiMessage status="#90" address="#32"/> </Control>
+		<Control name="globalviewButton" type="trigger" options="receive"> <MidiMessage status="#90" address="#33"/> </Control>
+
+		<Control name="flipLED"       options="transmit"> <MidiMessage status="#90" address="#32"/> </Control>
+		<Control name="globalviewLED" options="transmit"> <MidiMessage status="#90" address="#33"/> </Control>
+
+		<!-- Display Switches -->
+		<Control name="namevalueButton"  type="trigger" options="receive"> <MidiMessage status="#90" address="#34"/> </Control>
+		<Control name="smptebeatsButton" type="trigger" options="receive"> <MidiMessage status="#90" address="#35"/> </Control>
+		
+		<!-- F1 - F8 -->
+		<Control name="F1" title="F1"	type="trigger" options="receive public"> <MidiMessage status="#90" address="#36"/> </Control>
+		<Control name="F2" title="F2"	type="trigger" options="receive public"> <MidiMessage status="#90" address="#37"/> </Control>
+		<Control name="F3" title="F3"	type="trigger" options="receive public"> <MidiMessage status="#90" address="#38"/> </Control>
+		<Control name="F4" title="F4"	type="trigger" options="receive public"> <MidiMessage status="#90" address="#39"/> </Control>
+		<Control name="F5" title="F5"	type="trigger" options="receive public"> <MidiMessage status="#90" address="#3A"/> </Control>
+		<Control name="F6" title="F6"	type="trigger" options="receive public"> <MidiMessage status="#90" address="#3B"/> </Control>
+		<Control name="F7" title="F7"	type="trigger" options="receive public"> <MidiMessage status="#90" address="#3C"/> </Control>
+		<Control name="F8" title="F8"	type="trigger" options="receive public"> <MidiMessage status="#90" address="#3D"/> </Control>
+		
+		<!-- Mixer Bank Selectors -->
+		<Control name="miditracksButton"      type="trigger" options="receive"> <MidiMessage status="#90" address="#3E"/> </Control>
+		<Control name="inputsButton"          type="trigger" options="receive"> <MidiMessage status="#90" address="#3F"/> </Control>
+		<Control name="audiotracksButton"     type="trigger" options="receive"> <MidiMessage status="#90" address="#40"/> </Control>
+		<Control name="audioinstrumentButton" type="trigger" options="receive"> <MidiMessage status="#90" address="#41"/> </Control>
+		<Control name="auxButton"             type="trigger" options="receive"> <MidiMessage status="#90" address="#42"/> </Control>
+		<Control name="bussesButton"          type="trigger" options="receive"> <MidiMessage status="#90" address="#43"/> </Control>
+		<Control name="outputsButton"         type="trigger" options="receive"> <MidiMessage status="#90" address="#44"/> </Control>
+		<Control name="userButton"            type="trigger" options="receive"> <MidiMessage status="#90" address="#45"/> </Control>
+		
+		<!-- Modifiers-->
+		<Control name="shiftButton"   type="trigger" options="receive"> <MidiMessage status="#90" address="#46"/> </Control>
+		<Control name="optionButton"  type="trigger" options="receive"> <MidiMessage status="#90" address="#47"/> </Control>
+		<Control name="controlButton" type="trigger" options="receive"> <MidiMessage status="#90" address="#48"/> </Control>
+		<Control name="cmdaltButton"  type="trigger" options="receive"> <MidiMessage status="#90" address="#49"/> </Control>
+
+		<!-- Automation -->
+		<Control name="readoffButton" type="trigger" options="receive"> <MidiMessage status="#90" address="#4A"/> </Control>
+		<Control name="writeButton"   type="trigger" options="receive"> <MidiMessage status="#90" address="#4B"/> </Control>
+		<Control name="trimButton"    type="trigger" options="receive"> <MidiMessage status="#90" address="#4C"/> </Control>
+		<Control name="touchButton"   type="trigger" options="receive"> <MidiMessage status="#90" address="#4D"/> </Control>
+		<Control name="latchButton"   type="trigger" options="receive"> <MidiMessage status="#90" address="#4E"/> </Control>
+		<Control name="groupButton"   type="trigger" options="receive"> <MidiMessage status="#90" address="#4F"/> </Control>
+		
+		<Control name="readoffLED" options="transmit"> <MidiMessage status="#90" address="#4A"/> </Control>
+		<Control name="writeLED"   options="transmit"> <MidiMessage status="#90" address="#4B"/> </Control>
+		<Control name="trimLED"    options="transmit"> <MidiMessage status="#90" address="#4C"/> </Control>
+		<Control name="touchLED"   options="transmit"> <MidiMessage status="#90" address="#4D"/> </Control>
+		<Control name="latchLED"   options="transmit"> <MidiMessage status="#90" address="#4E"/> </Control>
+		<Control name="groupLED"   options="transmit"> <MidiMessage status="#90" address="#4F"/> </Control>
+
+ 		<!-- Utilities -->
+		<Control name="saveButton"   type="trigger" options="receive"> <MidiMessage status="#90" address="#50"/> </Control>
+		<Control name="undoButton"   type="trigger" options="receive"> <MidiMessage status="#90" address="#51"/> </Control>
+		<Control name="cancelButton" type="trigger" options="receive"> <MidiMessage status="#90" address="#52"/> </Control>
+		<Control name="enterButton"  type="trigger" options="receive"> <MidiMessage status="#90" address="#53"/> </Control>
+
+		<Control name="saveLED" options="transmit"> <MidiMessage status="#90" address="#50"/> </Control>
+		<Control name="undoLED" options="transmit"> <MidiMessage status="#90" address="#51"/> </Control>
+
+		<!-- Transport -->
+		<Control name="markerButton"  type="trigger" options="receive"> <MidiMessage status="#90" address="#54"/> </Control>
+		<Control name="nudgeButton"   type="trigger" options="receive"> <MidiMessage status="#90" address="#55"/> </Control>
+		<Control name="cycleButton"   type="trigger" options="receive"> <MidiMessage status="#90" address="#56"/> </Control>
+		<Control name="dropButton"    type="trigger" options="receive"> <MidiMessage status="#90" address="#57"/> </Control>
+		<Control name="replaceButton" type="trigger" options="receive"> <MidiMessage status="#90" address="#58"/> </Control>
+		<Control name="clickButton"   type="trigger" options="receive"> <MidiMessage status="#90" address="#59"/> </Control>
+		<Control name="soloButton"    type="trigger" options="receive"> <MidiMessage status="#90" address="#5A"/> </Control>
+
+		<Control name="markerLED"  options="transmit"> <MidiMessage status="#90" address="#54"/> </Control>
+		<Control name="nudgeLED"   options="transmit"> <MidiMessage status="#90" address="#55"/> </Control>
+		<Control name="cycleLED"   options="transmit"> <MidiMessage status="#90" address="#56"/> </Control>
+		<Control name="dropLED"    options="transmit"> <MidiMessage status="#90" address="#57"/> </Control>
+		<Control name="replaceLED" options="transmit"> <MidiMessage status="#90" address="#58"/> </Control>
+		<Control name="clickLED"   options="transmit"> <MidiMessage status="#90" address="#59"/> </Control>
+		<Control name="soloLED"    options="transmit"> <MidiMessage status="#90" address="#5A"/> </Control>
+		
+		<Control name="rewindButton" type="trigger" options="receive"> <MidiMessage status="#90" address="#5B"/> </Control>
+		<Control name="ffButton"     type="trigger" options="receive"> <MidiMessage status="#90" address="#5C"/> </Control>
+		<Control name="stopButton"   type="trigger" options="receive"> <MidiMessage status="#90" address="#5D"/> </Control>
+		<Control name="playButton"   type="trigger" options="receive"> <MidiMessage status="#90" address="#5E"/> </Control>
+		<Control name="recordButton" type="trigger" options="receive"> <MidiMessage status="#90" address="#5F"/> </Control>
+
+		<Control name="rewindLED" options="transmit"> <MidiMessage status="#90" address="#5B"/> </Control>
+		<Control name="ffLED"     options="transmit"> <MidiMessage status="#90" address="#5C"/> </Control>
+		<Control name="stopLED"   options="transmit"> <MidiMessage status="#90" address="#5D"/> </Control>
+		<Control name="playLED"   options="transmit"> <MidiMessage status="#90" address="#5E"/> </Control>
+		<Control name="recordLED" options="transmit"> <MidiMessage status="#90" address="#5F"/> </Control>
+
+		<!-- Navigation -->
+		<Control name="upButton"    type="trigger" options="receive"> <MidiMessage status="#90" address="#60"/> </Control>
+		<Control name="downButton"  type="trigger" options="receive"> <MidiMessage status="#90" address="#61"/> </Control>
+		<Control name="leftButton"  type="trigger" options="receive"> <MidiMessage status="#90" address="#62"/> </Control>
+		<Control name="rightButton" type="trigger" options="receive"> <MidiMessage status="#90" address="#63"/> </Control>
+		<Control name="zoomButton"  type="trigger" options="receive"> <MidiMessage status="#90" address="#64"/> </Control>
+		<Control name="scrubButton" type="trigger" options="receive"> <MidiMessage status="#90" address="#65"/> </Control>
+
+		<Control name="zoomLED"  options="transmit"> <MidiMessage status="#90" address="#64"/> </Control>
+		<Control name="scrubLED" options="transmit"> <MidiMessage status="#90" address="#65"/> </Control>
+
+		<!-- User switches -->	
+		<Control name="userSwitch1" type="button" options="receive" > <MidiMessage status="#90" address="#66"/> </Control>
+		<Control name="userSwitch2" type="button" options="receive" > <MidiMessage status="#90" address="#67"/> </Control>	
+		
+		<!-- Display LEDs -->
+		<Control name="smpteLED"    options="transmit"> <MidiMessage status="#90" address="#71"/> </Control>
+		<Control name="beatsLED"    options="transmit"> <MidiMessage status="#90" address="#72"/> </Control>
+		<Control name="rudesoloLED" options="transmit"> <MidiMessage status="#90" address="#73"/> </Control>
+		
+        <!-- ******************************************************************************************** -->
+        <!-- Displays -->
+        <!-- ******************************************************************************************** -->
+		
+		<Control name="timeCode" options="transmit fastupdate"/>
+		<Control name="assignmentDisplay" options="transmit"/>
+		
+		<!-- ******************************************************************************************** -->
+        <!-- Jog/Scrub   + Exteral Control -->
+        <!-- ******************************************************************************************** -->
+	
+		<Control name="wheel" type="relative" options="receive"> <MidiMessage status="#B0" address="#3C" options="reversed"/> </Control>
+		<Control name="externalControl" options="receive"> <MidiMessage status="#B0" address="#2E"/> </Control>
+		
+	</Controls>
+	
+	<!-- ******************************************************************************************** -->
+	<!-- SURFACE MAPPINGS -->
+	<!-- ******************************************************************************************** -->
+
+	<Mappings>
+		<!-- ******************************************************************************************** -->
+        <!-- GENERIC MAPPING (used for "on the fly" control assignment) -->
+        <!-- ******************************************************************************************** -->
+
+		<GenericMapping>
+			<Bank>
+				<include template="PlugControlMapping"/>
+
+				<Strip name="masterFader">
+					<Value control="masterFader" param="value" options="above"/>
+					<Touch control="masterTouch" param="value" options="above"/>
+					<String control="masterDisplay" param="value" options="above"/>
+				</Strip>
+
+				<Strip name="F1"><Toggle control="F1" param="value" options="above"/></Strip>
+				<Strip name="F2"><Toggle control="F2" param="value" options="above"/></Strip>
+				<Strip name="F3"><Toggle control="F3" param="value" options="above"/></Strip>
+				<Strip name="F4"><Toggle control="F4" param="value" options="above"/></Strip>
+				<Strip name="F5"><Toggle control="F5" param="value" options="above"/></Strip>
+				<Strip name="F6"><Toggle control="F6" param="value" options="above"/></Strip>
+				<Strip name="F7"><Toggle control="F7" param="value" options="above"/></Strip>
+				<Strip name="F8"><Toggle control="F8" param="value" options="above"/></Strip>				
+			</Bank>
+		</GenericMapping>
+
+		<!-- ******************************************************************************************** -->
+        <!-- GLOBAL MAPPING -->
+        <!-- ******************************************************************************************** -->
+
+		<Global>
+			<!-- **************************************************************************************** -->
+			<!-- Command Mapping -->
+			<!-- **************************************************************************************** -->
+
+			
+			<Command control="instrumentButton" command.category="Console" command.name="Show Instrument Editor"/>
+			
+			
+
+			<Variant control="optionButton">
+				<!-- [Option] not pressed -->
+				<Group>
+					<Command control="F1" command.category="Console"   	command.name="Show Inputs"/>		
+					<Command control="F2" command.category="Console"   	command.name="Show Track"/>
+					<Command control="F3" command.category="View"      	command.name="Console"/>			
+					<Command control="F4" command.category="Console"   	command.name="Open Channel"/>      
+					<Command control="F5" command.category="Console"   	command.name="Add Insert"/>		
+					<Command control="F6" command.category="Console"   	command.name="Add Send"/>		
+					<Command control="F7" command.category="Console"   	command.name="Show Channel Editor"/>	
+					<Command control="F8" command.category="View"   	command.name="Toggle Floating Windows"/>	
+				</Group>
+				<!-- [Option] pressed -->
+				<Group>
+					<using device="Editor/Paging">
+						<Radio control="F1" param="pagingMode" value="1"/>
+						<Radio control="F2" param="pagingMode" value="2"/>		
+<!--					<Radio control="F3" param="pagingMode" value="2" radiovalue="2" offvalue="1" options="toggle"/> -->
+					</using>    
+				</Group>
+			</Variant>
+
+
+			<Variant control="zoomButton" options="lock" statusled="zoomLED">
+				<!-- [Zoom] not pressed -->
+				<Group>				
+					<Variant control="scrubButton" statusled="scrubLED">
+						<!-- [Zoom] not pressed [Scrub] not pressed-->
+						<Group>
+							<Command control="upButton"    command.category="Navigation" command.name="Up" options="autorepeat"/>
+							<Command control="downButton"  command.category="Navigation" command.name="Down" options="autorepeat"/>
+							<Command control="leftButton"  command.category="Navigation" command.name="Left" options="autorepeat"/>
+							<Command control="rightButton" command.category="Navigation" command.name="Right" options="autorepeat"/>
+						</Group>	
+						<!-- [Zoom] not pressed [Scrub] IS pressed-->
+						<Group>
+							<Command control="upButton"    command.category="Transport" command.name="Set Loop End" />
+							<Command control="downButton"  command.category="Transport" command.name="Set Loop Start" />
+							<Command control="leftButton"  command.category="Transport" command.name="Shift Loop Backwards" options="autorepeat"/>
+							<Command control="rightButton" command.category="Transport" command.name="Shift Loop" options="autorepeat"/>
+						</Group>	
+					</Variant>
+				</Group>				
+				<!-- [Zoom] pressed -->
+				<Group>
+					<Command control="upButton"    command.category="Zoom" command.name="Zoom Out Vertical"/>
+					<Command control="downButton"  command.category="Zoom" command.name="Zoom In Vertical"/>
+					<Command control="leftButton"  command.category="Zoom" command.name="Zoom Out"/>
+					<Command control="rightButton" command.category="Zoom" command.name="Zoom In"/>						
+				</Group>
+			</Variant>
+
+			<Command control="userSwitch1" command.category="Transport" command.name="Toggle Start"/>
+			<Command control="userSwitch2" command.category="Transport" command.name="Record"/>
+
+			<Variant control="shiftButton">
+				<!-- [Shift] not pressed -->
+				<Group>				
+					<Command control="undoButton" command.category="Edit" command.name="Undo"/>				
+					<Command control="saveButton" command.category="File" command.name="Save"/>
+					<using device="Editor/Paging">
+						<Toggle control="faderChanLeft" param="prevPage" options="autorepeat"/>
+						<Toggle control="faderChanRight" param="nextPage" options="autorepeat"/>
+					</using>    
+				</Group>				
+				<!-- [Shift] pressed -->
+				<Group>
+					<Command control="undoButton" command.category="Edit" command.name="Redo"/>
+					<Command control="saveButton" command.category="File" command.name="Save As"/>					
+					<Command control="faderChanLeft"  command.category="Devices" command.name="Previous Device in Rack"/>
+					<Command control="faderChanRight" command.category="Devices" command.name="Next Device in Rack"/>			
+					<Command control="pluginButton" command.category="Console" command.name="Show Channel Editor"/>			
+				</Group>
+			</Variant>
+			
+			<Command control="enterButton"  command.category="Navigation" command.name="Enter"/>
+			<Command control="cancelButton" command.category="Navigation" command.name="Cancel"/>
+			
+			<!-- **************************************************************************************** -->
+			<!-- Script interaction -->
+			<!-- **************************************************************************************** -->
+						
+			<String control="assignmentDisplay" param="assignString"/>
+
+			<Radio control="trackButton" param="assignMode" value="0"/> <!-- kTrackMode -->
+			<Radio control="trackLED" param="assignMode" value="0"/>
+
+			<Push control="sendButton" param="sendMode"/>
+			<Radio control="sendLED" param="assignMode" value="1"/> <!-- kSendMode -->
+
+			<Radio control="panButton" param="assignMode" value="2"/> <!-- kPanMode -->
+			<Radio control="panLED" param="assignMode" value="2"/>
+
+			<Radio control="pluginButton" param="assignMode" value="3"/> <!-- kPlugMode -->
+			<Radio control="pluginLED" param="assignMode" value="3"/>		
+			
+			<Radio control="eqButton" param="assignMode" value="4"/> <!-- kFXMode -->
+			<Radio control="eqLED" param="assignMode" value="4"/>		
+
+			<Toggle control="flipButton" param="flipMode"/>
+			<Value control="flipLED" param="flipMode"/>
+			
+			<Toggle control="namevalueButton" param="nameValueMode"/>
+
+			<Radio control="globalviewButton"      param="bankList" value="0"/>
+			<Radio control="globalviewLED"         param="bankList" value="0"/>
+			<Radio control="inputsButton"          param="bankList" value="1"/>
+			<Radio control="audiotracksButton"     param="bankList" value="2"/>
+			<Radio control="audioinstrumentButton" param="bankList" value="3"/>
+			<Radio control="auxButton"             param="bankList" value="4"/>
+			<Radio control="bussesButton"          param="bankList" value="5"/>
+			<Radio control="outputsButton"         param="bankList" value="6"/>
+			<Radio control="miditracksButton"      param="bankList" value="7"/> <!-- VCA -->
+			<Radio control="userButton"            param="bankList" value="8"/>
+			
+			<include template="ChannelStripAliasMapping"/>
+
+
+		</Global>
+        
+		<!-- ******************************************************************************************** -->
+        <!-- MIXER MAPPING -->
+        <!-- ******************************************************************************************** -->
+
+		<DeviceMapping device="MixerConsole" name="MixerMapping">
+			
+			<!-- 8 Channel Strips -->
+			<PlacementBank target="RemoteBank" pagesize="8" name="ChannelBankElement">
+			
+				<include template="AllChannelStrips"/>
+								
+				<!-- Bank Scroll Buttons -->
+				
+
+				<Variant control="shiftButton">
+				<!-- [SHIFT] not pressed parent group-->
+					<Group>
+						<Variant control="optionButton">
+						<!-- [shift] not pressed, [option] not pressed -->
+							<Group>				
+								<ScrollButton control="faderBankLeft"  direction="pageleft"/>
+								<ScrollButton control="faderBankRight" direction="pageright"/>				
+								<!-- Note: faderChanLeft & faderChanRight is in mappings above as they are page controls. -->
+							</Group>				
+						<!-- [shift] not pressed, [option] is pressed -->
+							<Group>
+								<Command control="faderBankLeft"  command.category="Presets" command.name="Previous"/>
+								<Command control="faderBankRight" command.category="Presets" command.name="Next"/>
+								<Command control="faderChanLeft"  command.category="Devices" command.name="Previous Device in Rack"/>
+								<Command control="faderChanRight" command.category="Devices" command.name="Next Device in Rack"/>						
+							</Group>
+						</Variant>	
+					</Group>
+
+				<!-- [SHIFT] pressed, [option] not pressed -->
+					<Group>
+						<ScrollButton control="faderBankLeft"  direction="stepleft"/>
+						<ScrollButton control="faderBankRight" direction="stepright"/>									
+						<!-- Note: faderChanLeft & faderChanRight is in mappings above as they are page controls when not shifted. -->
+					</Group>
+				</Variant>
+			
+			</PlacementBank>
+						
+			<!-- Selected channel -->
+			<ScrollBank target="FollowBank" pagesize="1" name="FocusBankElement">
+				<Strip onConnect="onConnectFocusChannel"> 
+				
+					<include template="FocusChannelInsertsAndSends"/>
+									
+					<!-- Automation Mode -->
+					<!--
+					<Radio control="trimButton"   param="automationMode" value="5" options="toggle"/>
+					<Radio control="trimLED"      param="automationMode" value="5"/>
+					-->
+					<Radio control="readoffButton" param="automationMode" value="1" options="toggle"/>
+					<Radio control="readoffLED"    param="automationMode" value="1"/>
+
+					<Radio control="touchButton"   param="automationMode" value="2" options="toggle"/>
+					<Radio control="touchLED"      param="automationMode" value="2"/>
+
+					<Radio control="latchButton"   param="automationMode" value="3" options="toggle"/>
+					<Radio control="latchLED"      param="automationMode" value="3"/>
+					
+					<Radio control="writeButton"   param="automationMode" value="4" options="toggle"/>
+					<Radio control="writeLED"      param="automationMode" value="4"/>
+					
+				</Strip>
+			</ScrollBank>
+			
+			<!-- Master Strip -->
+			<Bank target="MasterBank" name="MasterBankElement">
+				<Strip>
+					<Value control="masterFader" param="volume"/>
+					<String control="masterDisplay" param="volume"/>
+					<Value control="externalControl" param="volume"/>				
+					<Touch control="masterTouch" param="volume"/>
+				</Strip>
+			</Bank>
+			
+			<Toggle control="soloButton"  param="anySolo"/>
+			<Value  control="soloLED"     param="anySolo"/>
+			<Value  control="rudesoloLED" param="anySolo"/>									
+		</DeviceMapping>
+
+        <!-- ******************************************************************************************** -->
+        <!-- TRANSPORT MAPPING -->
+        <!-- ******************************************************************************************** -->
+
+		<DeviceMapping device="TransportPanel">
+
+			<Radio control="smptebeatsButton" param="primaryTimeFormat" value="2" options="toggle"/>		
+			<Radio control="smpteLED"		  param="primaryTimeFormat" value="3"/>
+			<Radio control="beatsLED"		  param="primaryTimeFormat" value="2"/>
+		
+			<Segmented control="timeCode" param="primaryTime"/>
+		
+			<Variant control="scrubButton" statusled="scrubLED">
+				<!--[Scrub] not pressed-->
+				<Group>
+				<Relative control="wheel" param="freeCursorTime"/>
+				</Group>
+	
+				<!--[Scrub] pressed-->
+				<Group>
+					<Command control="wheel"    command.category="Navigation" 	command.name="Down" 
+												command2.category="Navigation" 	command2.name = "Up"/>
+				</Group>
+			</Variant>
+
+			<!-- <Toggle control="cycleButton" param="loop"/> -->
+			<Command control="cycleButton" command.category="Transport" command.name="Toggle Loop"/>
+			<Value control="cycleLED"     param="loop"/>
+
+			<!-- <Toggle control="dropButton"  param="punch"/> -->
+			<Command control="dropButton" command.category="Transport" command.name="Autopunch"/>
+			<Value  control="dropLED"     param="punch"/>
+
+			<!-- <Toggle control="playButton"  param="start"/> -->
+			<Command control="playButton" command.category="Transport" command.name="Start"/>
+			<Value control="playLED"      param="start"/>
+						
+			<!-- <Toggle control="stopButton"  param="stop"/> -->
+			<Command control="stopButton" command.category="Transport" command.name="Stop"/>
+			<Value control="stopLED"      param="stop"/>
+			
+			<Value control="recordLED"    param="record"/>
+			<Value control="ffLED"        param="fastForward"/>
+			<Value control="rewindLED"    param="rewind"/>
+		
+			<Variant control="markerButton" options="lock" statusled="markerLED">
+				<!-- [marker] not on-->
+				<Group>
+				
+					<Touch control="ffButton"      param="fastForward"/>				
+					<Touch control="rewindButton"  param="rewind"/>
+					<Toggle control="recordButton" param="record"/>
+					
+				</Group>
+				
+				<!-- [marker]  on -->
+				<Group>
+
+					<Command control="recordButton" command.category="Marker" command.name="Insert"/>
+					<Command control="rewindButton" command.category="Marker" command.name="Goto Previous Marker"/>
+					<Command control="ffButton"     command.category="Marker" command.name="Goto Next Marker"/>
+					
+				</Group>
+			</Variant>
+
+		</DeviceMapping>
+		
+        <!-- ******************************************************************************************** -->
+        <!-- METRONOME MAPPING -->
+        <!-- ******************************************************************************************** -->
+
+		<DeviceMapping device="Metronome">
+			<Toggle control="clickButton" param="clickOn"/>
+			<Value control="clickLED" param="clickOn"/>
+		</DeviceMapping>
+
+	</Mappings>
+
+</ControlSurface>
