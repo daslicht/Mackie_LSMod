@@ -15,7 +15,7 @@ C:\Users\YOURNAME\AppData\Roaming\PreSonus\Studio One 6\User Devices
 -----------------  
 
 fork from: https://forums.presonus.com/viewtopic.php?f=151&t=41102  
-inclusive sends patch    
+inclusive ![https://forums.presonus.com/viewtopic.php?p=260451#p260451](sends patch)   
 compatible with StudioOne 6  
 
 All credits go to Skijumptoes
